@@ -1,6 +1,6 @@
 {
-    "title": "VDS",
-    "description": "Voting Definition Specification (superset of VDL).",
+    "title": "VDX",
+    "description": "Voting Definition Specification.",
     "type": "object",
     "properties": {
       "algorithm_name": {
