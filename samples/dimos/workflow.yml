@@ -1,0 +1,11 @@
+---
+image: panosece/pybench
+mode: remote
+input: git@github.com:EcePanos/ref_2.git
+output: git@github.com:EcePanos/ref_2.git
+input_mount: "/usr/src/app/input"
+output_mount: "/usr/src/app/data"
+branch: node2
+env:
+cmd:
+docker_socket: false

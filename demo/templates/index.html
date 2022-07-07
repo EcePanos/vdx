@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Algorithm Demonstration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class='container'>
+    
+    <div class = "row">
+      <div calss = "col-12">
+        <h1>Voting Algorithm Demonstration</h1>
+        <p>This is a demonstrator application built to document the reproducibility <br>
+        of our work and allow testing of our voting approach with arbitrary data files.</p>
+        <h3> Instructions: </h3>
+        <p>Load a csv file to use one of the available voting algorithms<br>
+        to merge the columns. Each column needs to correspond to one of <br> N
+        redundant measurements. Therefore each row will be merged into one output value.<br>
+        For a value to be valid it needs to be able to be cast to FLOAT. <br>
+        Files are treated as if they have no heading row.</p>
+        <h3> Available Algorithms: </h3>
+        <ul>
+          <li>Simple Average</li>
+          <li>History Based Weighted Average (HBWA) [1]</li>
+          <li>Module Elimination Weighted Average (MEWA) [1]</li>
+          <li>Soft-Dynamic Threshold History Based Weighted Average (DTHBWA) [2]</li>
+          <li>Hybrid History Based Weighted Average (HHBWA) [3]</li>
+          <li>Cluster Majority Mean (CMM)</li>
+          <li>HHBWA + CMM (HCMM)</li>
+        </ul>
+          <form action = "/display" method = "POST"
+               enctype = "multipart/form-data">
+               <h5> Algorithm and file selection: </h5>
+               <select name="algorithm">
+                 <option value='average'>Simple Average</option>
+                 <option value='HBWA'>HBWA</option>
+                 <option value='MEWA'>MEWA</option>
+                 <option value='DTHBWA'>DTHBWA</option>
+                 <option value='HHBWA'>HHBWA</option>
+                 <option value='CMM'>CMM</option>
+                 <option value='HCMM'>HCMM</option>
+               </select>
+               <input type = "file" name = "file" />
+               <br><br>
+               <input type = "submit"/>
+               <input type = "reset"/>
+            </form>
+        <br>
+        <h5> CMM and HCMM Contribution </h5>
+        <p> We have developed the CMM algorithm to improve the fallback <br>
+          performance of the standard history based approach. In the persence of <br>
+          faults or missing data or during the first round where history has yet to be <br>
+          established, CMM outperforms all algorithms (with some constraints) and <br>
+          still outperforms all but MEWA and HHBWA in other cases. HCMM is a version <br>
+          of HHBWA that bootstraps by using CMM and then falls back to CMM when weights <br>
+          are all 0 or 1. 
+        </p>
+        <h3> References </h3>
+        <p> [1] G. Latif-Shabgahi, J. M. Bass and S. Bennett, "History-based weighted average<br>
+          voter: a novel software voting algorithm for fault-tolerant computer systems," <br>
+          Proceedings Ninth Euromicro Workshop on Parallel and Distributed Processing, 2001, <br>
+          pp. 402-409, doi: 10.1109/EMPDP.2001.905068.
+        </p>
+        <p> [2] Das, M., & Bhattacharya, S. (2010). A Modified History Based Weighted <br>
+          Average Voting with Soft-Dynamic Threshold. 2010 International Conference on <br>
+           Advances in Computer Engineering. https://doi.org/10.1109/ACE.2010.45
+         </p>
+         <p> [3] A. Alahmadi and B. Soh, “A hybrid history based weighted voting <br>
+            algorithm for ultra-critical systems,” in Communications and Information <br>
+            Technologies (ISCIT), 2012 International Symposium on, pp. 1122–1127, IEEE, 2012.
+          </p>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
