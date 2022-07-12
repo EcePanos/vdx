@@ -1,6 +1,17 @@
 # VDX
+![Licence](https://img.shields.io/github/license/EcePanos/vdx) ![Size](https://img.shields.io/github/languages/code-size/EcePanos/vdx)
+
+![Logo](logo_vdx.drawio.png)
 
 VDX is a generic vote definition specification. It aims to be a simple way to define the behavior of voting software.
+
+## Features
+
+- Simple specification for software defined voting
+- Fully customizable voting algorithms
+- Support for stateless and stateful (history-aware) voting
+- Tunable voting parameters
+- Optional bootstrapping algorithm to speed up convergence of history-based voting
 
 The contents of this repository are as follows:
 
