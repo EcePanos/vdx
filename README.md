@@ -19,6 +19,7 @@ The contents of this repository are as follows:
 - A simple implementation of the specification, in the form of a Python module.
 - A folder of samples for different use-cases.
 - A demo app as a Docker image with lightweight pre-configured VDX compliant algorithms for evaluation. Uses an old version of the CSV voter sample and does not support custom algorithm definitions but replicates well-known algorithms and can be used to merge simple datasets or to compare the performance of different algorithms.
+- A folder with experimental features under development, such as new voting algorithms being investigated for inclusion.
 
 ## VDX Fields
 
