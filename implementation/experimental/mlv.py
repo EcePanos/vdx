@@ -34,7 +34,7 @@ def mlv(input, weights, margin):
     return input[index]
 result1 = []
 start = time.time() 
-for i in range(1000000):
+for i in range(10000):
     p = mlv(input, weights, 0.1)
     result1.append(p)
 end = time.time()
@@ -42,7 +42,7 @@ print("done in " + str(end - start) + " seconds")
 
 result2 = []
 start = time.time()
-for i in range(1000000):
+for i in range(10000):
     p = vdx.weighted_average(input, weights)
     p = vdx.nearest_neighbor(p, input)
     result2.append(p)
@@ -51,7 +51,7 @@ print("done in " + str(end - start) + " seconds")
 
 result3 = []
 start = time.time()
-for i in range(1000000):
+for i in range(10000):
     p = vdx.majority_voting_bootstrapping(input, 0.1)
     p = vdx.nearest_neighbor(p, input)
     result3.append(p)

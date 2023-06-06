@@ -1,7 +1,7 @@
 input = [5, 4, 7]
 
 
-for i in range(1000000):
+for i in range(10000):
     # Calculate the distances of all pairs as a 2d array
     distances = [[abs(a - b) for a in input] for b in input]
 

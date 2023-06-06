@@ -86,9 +86,11 @@ def genetic_algorithm_weighted_voting():
 
     return best_chromosome, best_fitness, generation
 
-# Run the genetic algorithm
-best_chromosome, best_fitness, generations = genetic_algorithm_weighted_voting()
-output = sum([input[i] * best_chromosome[i] for i in range(num_experts)]) / sum(best_chromosome)
+for i in range(10000):
+
+    # Run the genetic algorithm
+    best_chromosome, best_fitness, generations = genetic_algorithm_weighted_voting()
+    output = sum([input[i] * best_chromosome[i] for i in range(num_experts)]) / sum(best_chromosome)
 
 # Print the results
 print("Best Chromosome:", best_chromosome)

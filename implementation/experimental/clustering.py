@@ -6,13 +6,10 @@ import vdx
 import time
 import math
 
-X = np.array([[1, 1, 2, 3,1, 1, 2, 3], [2, 1, 4, 2,1, 1, 2, 3], [1, 0, 1, 1,1, 1, 2, 3],
-              [4, 7, 1, 3,1, 1, 2, 3], [3, 5, 2, 2,1, 1, 2, 3], [1, 1, 5, 6,1, 1, 2, 3],
-               [2, 1, 0, 6,1, 1, 2, 3], [1, 0, 4, 4,1, 1, 2, 3],
-              [4, 7, 1, 1,1, 1, 2, 3], [3, 5, 2, 2,1, 1, 2, 3]])
+X = np.array([[5],[4],[7]])
 
 start = time.time()
-for t in range(1000):
+for t in range(10000):
     clustering = MeanShift(bandwidth=2).fit(X)
     #print(clustering.labels_)
     # find the number of points in each cluster
@@ -31,7 +28,7 @@ end = time.time()
 print("done in " + str(end - start) + " seconds")
 
 start = time.time()
-for t in range(1000):
+for t in range(10000):
     output = []
     for i in range(len(X[0])):
         input = []
@@ -56,15 +53,12 @@ print("done in " + str(end - start) + " seconds")
 
 # That said, meanshift is 100 times slower in the example.
 
-sample = np.array([[1, 1, 2, 3,1, 1, 2, 3], [2, 1, 4, 2,1, 1, 2, 3], [1, 0, 1, 1,1, 1, 2, 3],
-              [4, 7, 1, 3,1, 1, 2, 3], [3, 5, 2, 2,1, 1, 2, 3], [1, 1, 5, 6,1, 1, 2, 3],
-               [2, 1, 0, 6,1, 1, 2, 3], [1, 0, 4, 4,1, 1, 2, 3],
-              [4, 7, 1, 1,1, 1, 2, 3], [3, 5, 2, 2,1, 1, 2, 3]])
+sample = np.array([[5],[4],[7]])
 #print(sample)
 # Prepare initial centers - amount of initial centers defines amount of clusters from which X-Means will
 # start analysis.
 start = time.time()
-for t in range(1000):
+for t in range(10000):
     amount_initial_centers = 2
     initial_centers = kmeans_plusplus_initializer(sample, amount_initial_centers).initialize()
     # Create instance of X-Means algorithm. The algorithm will start analysis from 2 clusters, the maximum
