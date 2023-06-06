@@ -25,6 +25,12 @@ print("done in " + str(end - start) + " seconds")
 # Alternatively we can check which candidate has the highest sum of normalized distances
 # and either select a winner based on that, or use that sum as the weight for the weighted average
 
+# Calculate the sum of normalized distances for each candidate
+sums = [sum(row) for row in normalized_distances]
+# Calculate weighted average of the candidates, weighed by the sum of normalized distances
+output = sum([input[i] * sums[i] for i in range(len(input))]) / sum(sums)
+print(output)
+
 start = time.time()
 output2 = vdx.majority_voting_bootstrapping(input, 1)
 print(output2)
