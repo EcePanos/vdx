@@ -2,7 +2,7 @@ import random
 
 # Define the problem-specific variables
 input = [5, 4, 7]
-ground_truth = 5
+ground_truth = 5 # Calculated as the previous consensus and adjusted for trajectory using a Kalman filter
 num_experts = 3  # Number of experts or voters
 population_size = 20  # Number of chromosomes in each generation
 max_generations = 100  # Maximum number of generations
