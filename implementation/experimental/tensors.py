@@ -14,10 +14,10 @@ normalized_distances = [[1 - (d / threshold) if d < threshold else 0 for d in ro
 print(normalized_distances)
 
 # Calculate the votes using the map() function
-votes = list(map(lambda row: sum([row[j] * input[j] for j in range(len(input))]) / sum(row), normalized_distances))
+votes = list(map(lambda row: sum([row[j] * input[j] for j in range(len(input))]), normalized_distances))
 print(votes)
 # Average the votes, weighed by the sum of the normalized distances
-output = sum([votes[i] * sum(normalized_distances[i]) for i in range(len(input))]) / sum([sum(row) for row in normalized_distances])
+output = sum([votes[i] for i in range(len(input))]) / sum([sum(row) for row in normalized_distances])
 print(output)
 end = time.time()
 print("done in " + str(end - start) + " seconds")
