@@ -70,4 +70,4 @@ The demo application contains 6 sample algorithms but no persistence or the abil
 ![Demo](/demo.png)
 
 ## Zenodo Archived version:
-![https://doi.org/10.5281/zenodo.8069916](https://doi.org/10.5281/zenodo.8069916)
+[https://doi.org/10.5281/zenodo.8069916](https://doi.org/10.5281/zenodo.8069916)
