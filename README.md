@@ -68,3 +68,6 @@ The sample implementation is a simple Python module that implements the VDX spec
 The demo application contains 6 sample algorithms but no persistence or the ability to define algorithms with VDX. It does however, allow easy merging of CSV files (using the same method as the CSV voter) and the comparison of state-of-the-art algorithms.
 
 ![Demo](/demo.png)
+
+## Zenodo Archived version:
+![https://doi.org/10.5281/zenodo.8069916](https://doi.org/10.5281/zenodo.8069916)
